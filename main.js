@@ -1,5 +1,4 @@
 const electron = require('electron')
-var path = require('path')
 
 // handles application life
 const app = electron.app
