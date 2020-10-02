@@ -5,7 +5,6 @@ console.log("hello from renderer")
 // We want to open a dialog, but we may not do that from the renderer
 // so we ask something in the main process to do that for us:
 
-
 document.getElementById("errorButton").addEventListener("click", () => {
 
     console.log("error clicked")
