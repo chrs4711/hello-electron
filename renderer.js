@@ -1,20 +1,26 @@
-const fs = require('fs');
+const { ipcRenderer } = require('electron')
 
-const { dialog } = require("electron");
+console.log("hello from renderer")
 
-console.log("hello from renderer");
+// We want to open a dialog, but we may not do that from the renderer
+// so we ask something in the main process to do that for us:
 
-document.getElementById("mybutton").addEventListener("click", () => {
-    console.log("button clicked");
 
-    const data = "Successfully wrote to the desktop";
+document.getElementById("errorButton").addEventListener("click", () => {
 
-    dialog.showSaveDialog(filename => {
+    console.log("error clicked")
 
-        console.log("filename selected!");
+    ipcRenderer.send('show-error-box', 'some error happened')
+})
 
-        fs.writeFileSync(filename + ".txt", data, "utf-8", () => {
-            console.log("attempted to write file to desktop");
-        })
-    });
-});
+document.getElementById("openButton").addEventListener("click", function () {
+
+    console.log("open clicked")
+
+    ipcRenderer.send('open-dialog-show') // send should be async?
+
+    ipcRenderer.on('open-dialog-selected', (event, arg) => {
+        console.log(arg)
+    })
+
+})

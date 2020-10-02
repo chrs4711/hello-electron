@@ -1,7 +1,10 @@
 const electron = require('electron')
+var path = require('path')
 
 // handles application life
 const app = electron.app
+
+require('./dialog')
 
 // creates the native browser window
 const BrowserWindow = electron.BrowserWindow
@@ -10,7 +13,13 @@ let mainWindow // saves a reference to the main window
 
 function createWindow() {
 
-    mainWindow = new BrowserWindow({ width: 800, height: 600})
+    mainWindow = new BrowserWindow({ 
+        width: 1280,
+        height: 800,
+        webPreferences: {
+            nodeIntegration: true
+        }
+    })
 
     // what we use here is called a `template literal`
     mainWindow.loadURL(`file://${__dirname}/index.html`)
