@@ -1,8 +1,5 @@
 const electron = require('electron')
 
-// handles application life
-const app = electron.app
-
 require('./dialog')
 
 // creates the native browser window
@@ -29,6 +26,9 @@ function createWindow() {
         mainWindow = null
     })
 }
+
+// handles application life
+const app = electron.app
 
 app.on('ready', createWindow)
 
