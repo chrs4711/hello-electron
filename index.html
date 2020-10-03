@@ -16,15 +16,38 @@
 
 <body>
 
-    <h1>Hello World!</h1>
-    <p>Noice. Just refresh with cmd + R</p>
-
     <div class="container">
+
+        <!-- columns should be the immediate child of a .row -->
+        <div class="row">
+            <div class="one columns">
+                <p>UserId</p>
+            </div>
+            <div class="four columns">
+                <input type="text" id="userIdInput"></input>
+            </div>
+            <div class="one colum">
+                <button id="saveButton">Save</button>   
+            </div>
+        </div>
+
+        <!-- just use a number and class 'column' or 'columns' -->
+        <div class="row">
+            <div class="two columns"><button>test</button></div>
+            <div class="ten columns"><button>Ten</button></div>
+        </div>
+
+        <!-- <h1>Hello World!</h1>
+        <p>Noice. Just refresh with cmd + R</p> -->
+
         <button id="errorButton">ERROR</button>
-        <button id="openButton">Open Something</button>
+
+
+        <button id="openButton" class="button-primary">Open Something</button>
+
+        <br />
+
     </div>
-
-
 
     <script src="./renderer.js"></script>
 </body>
