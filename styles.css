@@ -7,8 +7,7 @@ body {
     width: 100%;
 }
 
-/*
-#todoTable tr:nth-child(even) {
-    background-color: #d1d1d1;
+.dataTable-pagination li {
+    display: inline;
+    padding-right: 20px;
 }
-*/
