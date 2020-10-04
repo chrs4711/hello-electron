@@ -3,23 +3,6 @@ const { DataTable } = require('simple-datatables')
 
 let userId;
 
-const data = {
-    "headings": [
-        "Item",
-        "Completed"
-    ],
-    "data": [
-        [
-            "Clean the kitchen",
-            "x"
-        ],
-        [
-            "Clean the bathroom",
-            ""
-        ]
-    ]
-}
-
 const dataTable = new DataTable("#todoTable", {
     "headings": [
         "Item",
