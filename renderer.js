@@ -57,6 +57,7 @@ document.getElementById("saveButton").addEventListener("click", () => {
 function updateTable(data) {
 
     dataTable.clear()
+    dataTable.data = []
 
     data.forEach(element => {
         // dataTable.rows().add([element.title, element.completed])
