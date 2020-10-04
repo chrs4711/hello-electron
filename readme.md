@@ -10,6 +10,9 @@ npm init
 npm install --save-dev electron
 ```
 
+## Stuff used
+
+* [simple-datatables](https://github.com/fiduswriter/Simple-DataTables)
 
 ## TODO
 
