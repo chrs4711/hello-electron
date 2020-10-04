@@ -1,8 +1,29 @@
 const { ipcRenderer } = require('electron')
+const { DataTable } = require('simple-datatables')
 
 let userId;
 
-console.log("hello from renderer")
+const data = {
+    "headings": [
+        "Item",
+        "Completed"
+    ],
+    "data": [
+        [
+            "Clean the kitchen",
+            "x"
+        ],
+        [
+            "Clean the bathroom",
+            ""
+        ]
+    ]
+}
+
+const dataTable = new DataTable("#todoTable", {
+    data
+})
+
 
 // We want to open a dialog, but we may not do that from the renderer
 // so we ask something in the main process to do that for us:
@@ -28,11 +49,17 @@ document.getElementById("openButton").addEventListener("click", () => {
 
 document.getElementById("saveButton").addEventListener("click", () => {
 
-    console.log("save button pressed. Saving userId");
-    
+    console.log("save button pressed.");
+
     // pull entry from input and save it
-    userId =  document.getElementById("userIdInput").value
-    
+    userId = document.getElementById("userIdInput").value
+
     // say that we have saved it.
     console.log("saving userId: " + userId)
+
+
+    // request data
+
+    // update table
+
 })
