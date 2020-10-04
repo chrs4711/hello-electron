@@ -21,9 +21,12 @@ const data = {
 }
 
 const dataTable = new DataTable("#todoTable", {
-    data
+    "headings": [
+        "Item",
+        "Completed"
+    ],
+    "data": []
 })
-
 
 // We want to open a dialog, but we may not do that from the renderer
 // so we ask something in the main process to do that for us:
@@ -57,9 +60,28 @@ document.getElementById("saveButton").addEventListener("click", () => {
     // say that we have saved it.
     console.log("saving userId: " + userId)
 
-
-    // request data
-
-    // update table
+    // request data, the super vanilla js way
+    fetch('https://jsonplaceholder.typicode.com/todos?userId=' + userId)
+        // fetch returns a promise that resolves as soon as the server responds with headers
+        .then(response => response.json())
+        // 'json()' returns another a promise, which resolves when the body is available
+        .then(updateTable)
 
 })
+
+function updateTable(data) {
+
+    console.log(data)
+
+    dataTable.clear()
+
+    data.forEach(element => {
+        // dataTable.rows().add([element.title, element.completed])
+        dataTable.rows().add([
+            element.title,
+            element.completed ? "yay" : "nay"])
+    });
+
+
+
+}
