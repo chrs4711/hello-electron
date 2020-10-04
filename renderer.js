@@ -52,10 +52,12 @@ document.getElementById("openButton").addEventListener("click", () => {
 
 document.getElementById("saveButton").addEventListener("click", () => {
 
-    console.log("save button pressed.");
-
-    // pull entry from input and save it
     userId = document.getElementById("userIdInput").value
+
+    if (!userId) {
+        ipcRenderer.send('show-error-box', 'Plz enter userId')
+        return // we're done here
+    }
 
     // say that we have saved it.
     console.log("saving userId: " + userId)
@@ -71,8 +73,6 @@ document.getElementById("saveButton").addEventListener("click", () => {
 
 function updateTable(data) {
 
-    console.log(data)
-
     dataTable.clear()
 
     data.forEach(element => {
@@ -80,8 +80,6 @@ function updateTable(data) {
         dataTable.rows().add([
             element.title,
             element.completed ? "yay" : "nay"])
-    });
-
-
+    })
 
 }
