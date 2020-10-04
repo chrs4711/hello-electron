@@ -3,3 +3,12 @@ body {
     padding: 1em;
 }
 
+#todoTable {
+    width: 100%;
+}
+
+/*
+#todoTable tr:nth-child(even) {
+    background-color: #d1d1d1;
+}
+*/
