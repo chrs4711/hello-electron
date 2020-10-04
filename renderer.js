@@ -1,5 +1,7 @@
 const { ipcRenderer } = require('electron')
 
+let userId;
+
 console.log("hello from renderer")
 
 // We want to open a dialog, but we may not do that from the renderer
@@ -12,7 +14,7 @@ document.getElementById("errorButton").addEventListener("click", () => {
     ipcRenderer.send('show-error-box', 'some error happened')
 })
 
-document.getElementById("openButton").addEventListener("click", function () {
+document.getElementById("openButton").addEventListener("click", () => {
 
     console.log("open clicked")
 
@@ -22,4 +24,15 @@ document.getElementById("openButton").addEventListener("click", function () {
         console.log(arg)
     })
 
+})
+
+document.getElementById("saveButton").addEventListener("click", () => {
+
+    console.log("save button pressed. Saving userId");
+    
+    // pull entry from input and save it
+    userId =  document.getElementById("userIdInput").value
+    
+    // say that we have saved it.
+    console.log("saving userId: " + userId)
 })
