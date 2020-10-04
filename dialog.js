@@ -21,7 +21,6 @@ ipcMain.on('open-dialog-show', (event, arg) => {
         console.log("canceled: " + result.canceled)
         console.log("result: " + result.filePaths)
 
-        // event.sender.send("open-dialog-selected", result.filePaths)
         event.reply("open-dialog-selected", result.filePaths)
 
     }).catch(err => {

@@ -14,5 +14,5 @@ npm install --save-dev electron
 ## TODO
 
 * [x] don't pull css stuff from the internets
+* [x] get rid of hyperspace (it sucks somehow here)
 * [ ] give it an icon
-* [ ] get rid of hyperspace (it sucks somehow here)
