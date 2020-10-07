@@ -1,11 +1,15 @@
 const electron = require('electron')
 
-// require('./dialog')
+require('./dialog')
 
 // creates the native browser window
 const BrowserWindow = electron.BrowserWindow
 
 let mainWindow // saves a reference to the main window
+
+// const path = require('path')
+// const iconPath = path.join('images/heart-beat.png')
+// console.log(iconPath)
 
 function createWindow() {
 
@@ -14,7 +18,8 @@ function createWindow() {
         height: 800,
         webPreferences: {
             nodeIntegration: true
-        }
+        },
+        icon: `${__dirname}/images/heart-beat-512.png`
     })
 
     // what we use here is called a `template literal`
