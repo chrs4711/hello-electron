@@ -1,0 +1,13 @@
+/* Here we can put some styles */
+body {
+    padding: 1em;
+}
+
+#todoTable {
+    width: 100%;
+}
+
+.dataTable-pagination li {
+    display: inline;
+    padding-right: 20px;
+}

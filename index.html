@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Electron!</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
+
+    <link rel="stylesheet" href="node_modules/skeleton-css/css/normalize.css" />
+    <link rel="stylesheet" href="node_modules/skeleton-css/css/skeleton.css" />
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- columns should be the immediate child of a .row -->
+        <div class="row">
+            <div class="three columns">
+                <input type="text" id="userIdInput" placeholder="userId"></input>
+            </div>
+            <div class="one colum">
+                <button id="saveButton">Save</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="twelve colums">
+
+                <table id="todoTable">
+
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./renderer.js"></script>
+</body>
+
+</html>
