@@ -1,6 +1,6 @@
 const electron = require('electron')
 
-require('./dialog')
+// require('./dialog')
 
 // creates the native browser window
 const BrowserWindow = electron.BrowserWindow
